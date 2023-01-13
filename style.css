@@ -63,3 +63,13 @@ main{
     width: 100px;
     height: 100px;   
 }
+@media (max-width: 600px){
+    main{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    header h1{
+        text-align: center;
+    }
+}
