@@ -7,9 +7,12 @@ let clicks = 0;
 let srcImgFaceDeTras = [];
 let elementoDivFaceDaFrente = [];
 let elementoDivFaceDeTrás = [];
+let numeroDeCartas = 0;
+let contadorCartasCorretas = 0;
+
 function distribuirCartas(){
     //Perguntar para o usuário com quantas cartas ele quer jogar
-    let numeroDeCartas = Number(prompt("Com quantas cartas você quer jogar?"));
+    numeroDeCartas = Number(prompt("Com quantas cartas você quer jogar?"));
     //Caso o número de cartas seja inválido, repetir o prompt em loop
     while(numeroDeCartas % 2 !== 0 || numeroDeCartas < 4 || numeroDeCartas > 14){
         alert("Número inválido. Por favor, digite um número par de 4 a 14");
@@ -54,5 +57,10 @@ function clicarNaCarta(cartaSelecionada){
             elementoDivFaceDaFrente[clicks-2].style.transform ="rotateY(0deg)";
             elementoDivFaceDeTrás[clicks-2].style.transform = "rotateY(180deg)";
         }, 1000);
+    }else if(clicks % 2 === 0){
+        contadorCartasCorretas = contadorCartasCorretas + 2;
     }
+        if(contadorCartasCorretas === numeroDeCartas){
+            alert("Você ganhou em "+clicks+" jogadas!");
+        }
 }
