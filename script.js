@@ -24,12 +24,12 @@ function distribuirCartas(){
         let cartasSelecionadas = nomesDosGifs.slice(0,numeroDeCartas/2).sort(comparador);
         for(let j = 0; j < numeroDeCartas/2; j++){
             elementoMain.innerHTML = elementoMain.innerHTML + 
-            `<div class="card" onclick="clicarNaCarta(this)">
+            `<div class="card" onclick="clicarNaCarta(this)" data-test="card">
                 <div class="front-face face">
-                    <img alt="papagaio estático" src="./imagens/back.png">
+                    <img alt="papagaio estático" src="./imagens/back.png" data-test="face-down-image">
                 </div>
                 <div class="back-face face">
-                    <img alt="Gif de papagaio" src="./imagens/${cartasSelecionadas[j]}.gif">
+                    <img alt="Gif de papagaio" src="./imagens/${cartasSelecionadas[j]}.gif" data-test="face-up-image">
                 </div>
             </div>`;
         }
